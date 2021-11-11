@@ -31,9 +31,7 @@ const search = () => {
             </SavedPlaces>
             {/* Confirm Location */}
             <ConfirmLocationContainer>
-                <ConfirmLocationButton src="">
-                    Confirm Locations
-                </ConfirmLocationButton>
+                Confirm Locations
             </ConfirmLocationContainer>
 
         </Wrapper>
@@ -49,7 +47,7 @@ const ButtonContainer = tw.div`
 bg-white px-4 
 `
 const BackButton = tw.img`
-h-12
+h-12 cursor-pointer
 `
 const InputContainer = tw.div`
 bg-white flex items-center px-4 mb-2
@@ -87,8 +85,5 @@ const StarIcon = tw.img`
 bg-gray-400 w-10 h-10 p-2 rounded-full mr-2
 `
 const ConfirmLocationContainer = tw.div`
-flex flex-col py-2 px-4 
-`
-const ConfirmLocationButton = tw.button`
-bg-black text-white text-2xl p-2 px-10 
+bg-black text-white text-center py-3 px-4 mx-4 mt-2 text-2xl cursor-pointer
 `
