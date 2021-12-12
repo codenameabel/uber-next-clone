@@ -26,7 +26,9 @@ const Map = (props) => {
       map.fitBounds([
         props.dropoffCoordinates,
         props.pickupCoordinates
-      ])
+      ], {
+        padding: 60
+      })
     }
   },[props.pickupCoordinates, props.dropoffCoordinates]);
 
