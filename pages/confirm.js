@@ -10,8 +10,7 @@ const Confirm = () => {
     const [ pickupCoordinates, setPickupCoordinates ] = useState()
     const [ dropoffCoordinates, setDropoffCoordinates ] = useState()
 
-    const getPickupCoordinates = () => {
-        const pickup = 'Santa Monica';
+    const getPickupCoordinates = (pickup) => {
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${pickup}.json?` +
             new URLSearchParams({
                 access_token: "pk.eyJ1IjoiYWJlbG1hcnRpbmV6ODY2IiwiYSI6ImNrdmxvNmdxODM1bXIydXAxMDV1b3BremgifQ.SFRzj5i5t3zTSWpMUd5CDw",
@@ -24,8 +23,7 @@ const Confirm = () => {
             })
     }
 
-    const getDropoffCoordinates = () => {
-        const dropoff = 'Los Angeles';
+    const getDropoffCoordinates = (dropoff) => {
         fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${dropoff}.json?` +
             new URLSearchParams({
                 access_token: "pk.eyJ1IjoiYWJlbG1hcnRpbmV6ODY2IiwiYSI6ImNrdmxvNmdxODM1bXIydXAxMDV1b3BremgifQ.SFRzj5i5t3zTSWpMUd5CDw",
@@ -39,9 +37,9 @@ const Confirm = () => {
     }
 
     useEffect(() => {
-        getPickupCoordinates();
-        getDropoffCoordinates();
-    }, [])
+        getPickupCoordinates(pickup);
+        getDropoffCoordinates(dropoff);
+    }, [pickup, dropoff])
 
     return (
         <Wrapper>
@@ -50,8 +48,12 @@ const Confirm = () => {
             dropoffCoordinates={dropoffCoordinates}
             />
             <RideContainer>
-                Ride Selector
-                Confirm Button
+                <RideSelector>
+                    Ride Selector 
+                </RideSelector>
+                <ConfirmButtonContainer>
+                    Confirm UberX
+                </ConfirmButtonContainer>
             </RideContainer>
         </Wrapper>
     )
@@ -65,3 +67,6 @@ flex h-screen flex-col
 const RideContainer = tw.div`
 flex-1 
 `
+const RideSelector = tw.div``
+
+const ConfirmButtonContainer = tw.div`` 
