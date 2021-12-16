@@ -7,17 +7,16 @@ const RideSelector = () => {
         <Wrapper>
             <Title>Choose a ride, or swipe up for more</Title>
             <CarList>
-                { carList.map((car) => {
-                    <Car>
-                        <CarImage src/>
+                {carList.map((car, index) => (
+                    <Car key={index}>
+                        <CarImage src={car.imgUrl}/>
                         <CarDetails>
-                            <Service></Service>
+                            <Service>{car.service}</Service>
                             <Time>5 min away</Time>
                         </CarDetails>
                         <Price>$24.00</Price>
                     </Car>
-                })}
-
+                ))}
             </CarList>
         </Wrapper>
     )
@@ -42,13 +41,15 @@ text-sm
 `
 
 const Wrapper = tw.div`
-flex-1 
+flex-1 overflow-y-scroll flex flex-col
 `
 const Title = tw.div`
 text-gray-500 text-center text-xs py-2 border-b
 `
 
-const CarList = tw.div``
+const CarList = tw.div`
+overflow-y-scroll
+`
 
 const Car = tw.div`
 flex p-4 items-center
