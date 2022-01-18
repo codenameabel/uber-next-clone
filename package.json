@@ -1,6 +1,7 @@
 {
   "name": "uber-next-clone",
   "private": true,
+  "homepage": "https://codenameabel.github.io/uber-next-clone",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
